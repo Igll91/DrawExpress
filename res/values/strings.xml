@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">DrawExpress</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="string_Undo">Undo</string>
+    <string name="string_new_drawing">New drawing</string>
+
+</resources>

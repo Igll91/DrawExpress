@@ -1,0 +1,51 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    tools:context=".MainActivity" >
+
+    <com.coursera.finaltask.drawexpress.DrawingView
+        android:id="@+id/drawingView"
+        android:layout_width="0dip"
+        android:layout_height="fill_parent"
+        android:layout_weight="1" />
+
+    <ScrollView
+        android:id="@+id/scrollView_tools"
+        android:layout_width="0dip"
+        android:layout_height="fill_parent"
+        android:layout_weight="0.3"
+        android:background="@drawable/elegance" >
+
+        <LinearLayout
+            android:id="@+id/linearLayout_tools"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <ImageButton
+                android:id="@+id/imageButton_undo"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                 />
+
+            <ImageView
+                android:id="@+id/imageView_selected_option"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:src="@android:drawable/ic_dialog_info"
+                />
+
+            <Spinner
+                android:id="@+id/spinner_drawing_option_selector"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:longClickable="false"
+                android:background="@android:color/darker_gray"
+                 />
+          
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>
