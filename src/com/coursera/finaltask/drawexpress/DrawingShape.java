@@ -2,6 +2,7 @@ package com.coursera.finaltask.drawexpress;
 
 import android.graphics.Canvas;
 import android.graphics.Paint;
+import android.os.Parcelable;
 
 /**
  * Abstract class used to define object that will represent Shapes drawn on {@link Canvas}.
@@ -9,7 +10,7 @@ import android.graphics.Paint;
  * @author Silvio
  *
  */
-public abstract class DrawingShape {
+public abstract class DrawingShape implements Parcelable{
 
 	protected Paint mPaint;
 
@@ -44,4 +45,12 @@ public abstract class DrawingShape {
 	 * @param values array of values to be set.
 	 */
 	public abstract void setValues(final float[] values);
+
+	public Paint getmPaint() {
+		return mPaint;
+	}
+
+	public void setmPaint(Paint mPaint) {
+		this.mPaint = mPaint;
+	}
 }

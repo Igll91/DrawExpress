@@ -13,4 +13,10 @@
         android:title="@string/string_Undo"
         />
     
+    <item 
+        android:id="@+id/action_Save"
+        android:orderInCategory="50"
+        android:showAsAction="ifRoom"
+        android:title="@string/action_save"/>
+    
 </menu>

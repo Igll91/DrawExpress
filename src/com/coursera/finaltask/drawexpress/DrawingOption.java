@@ -1,12 +1,21 @@
 package com.coursera.finaltask.drawexpress;
 
+/**
+ * Represents drawing option. (POJO)
+ * 
+ * <p>
+ * 	Saves drawing option name and image resource (for example r.drawable.image_xyz).
+ * </p>
+ * 
+ * @author Silvio
+ *
+ */
 public class DrawingOption {
 
 	private String name;
 	private int imageResource;
 	
 	public DrawingOption() {
-		// TODO Auto-generated constructor stub
 	}
 	
 	public DrawingOption(String name, int imageResource)

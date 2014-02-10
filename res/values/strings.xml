@@ -1,10 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-
-    <string name="app_name">DrawExpress</string>
-    <string name="action_settings">Settings</string>
-    <string name="hello_world">Hello world!</string>
+    <string name="app_name" translatable="false">DrawExpress</string>
     <string name="string_Undo">Undo</string>
     <string name="string_new_drawing">New drawing</string>
-
+    <string name="string_new_drawing_dialog_title">New drawing</string>
+    <string name="string_new_drawing_dialog_message">Are you sure you want to start new drawing?</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="string_thickness">Thickness</string>
+    <string name="shapes_paint_style">Shapes paint style:</string>
+    <string name="showing_currently_selected_color">Showing currently selected color</string>
+    <string name="current_drawing_tool">Current drawing tool</string>
+    <string name="action_save">Save</string>
+    <string name="saveImage_dialog_title">Save Image</string>
+    <string name="saveImage_dialog_text">Enter your image filename!</string>
+    <string name="saveImage_dialog_hint">filename&#8230;</string>
+    <string name="cancel">Cancel</string>
+    <string name="error_saving_image">Error while saving image! Try changing filename !</string>
+    <string name="file_exists">There already exists file with same name !</string>
 </resources>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="string_Undo">Poništi</string>
+    <string name="string_new_drawing">Novi crtež</string>
+    <string name="string_new_drawing_dialog_title">Novi crtež</string>
+    <string name="string_new_drawing_dialog_message">Jeste li sigurni da želite novi crtež?</string>
+    <string name="yes">Da</string>
+    <string name="no">Ne</string>
+    <string name="string_thickness">Debljina</string>
+    <string name="shapes_paint_style">Stil oblika:</string>
+    <string name="showing_currently_selected_color">Trenutno izabrana boja</string>
+    <string name="current_drawing_tool">Trenutni oblik</string>
+    <string name="action_save">Spremi</string>
+    <string name="saveImage_dialog_title">Spremi sliku</string>
+    <string name="saveImage_dialog_text">Unesite ime datoteke</string>
+    <string name="saveImage_dialog_hint">Ime datoteke&#8230;</string>
+    <string name="cancel">Poništi</string>
+    <string name="error_saving_image">Greška kod spremanja slike! Pokušajte promijeniti ime !</string>
+    <string name="file_exists">Već postoji datoteka s tim imenom!</string>
+</resources>

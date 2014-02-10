@@ -12,6 +12,16 @@ public class MySpinnerAdapter extends ArrayAdapter<String> {
 
 	private LayoutInflater inflater;
 
+	/**
+	 * Extracts names from {@link DrawingView#MAP_DRAWING_TOOLS} values.
+	 * 
+	 * <p>
+	 *  {@link DrawingView#MAP_DRAWING_TOOLS} contains objects of type {@link DrawingOption}. 
+	 *  Iterates through all of them and saves just names that are needed later into new array of Strings.
+	 * </p>
+	 * 
+	 * @return array of extracted Strings.
+	 */
 	private static String[] getArrayOfNames() 
 	{
 		String[] ret = new String[DrawingView.MAP_DRAWING_TOOLS.size()];
@@ -36,6 +46,9 @@ public class MySpinnerAdapter extends ArrayAdapter<String> {
 	}
 
 
+	/**
+	 * Sets spinner View.
+	 */
 	@Override
 	public View getView(int position, View convertView, ViewGroup parent) {
 		
@@ -47,6 +60,9 @@ public class MySpinnerAdapter extends ArrayAdapter<String> {
 		return mySpinner;
 	}
 
+	/**
+	 * Sets spinner drop down views.
+	 */
 	@Override
 	public View getDropDownView(int position, View convertView, ViewGroup parent) {
 

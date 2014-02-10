@@ -24,27 +24,138 @@
             android:layout_height="wrap_content"
             android:orientation="vertical" >
 
-            <ImageButton
-                android:id="@+id/imageButton_undo"
+            <TextView
+                android:id="@+id/textView_drawingOption_heading"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                 />
-
-            <ImageView
-                android:id="@+id/imageView_selected_option"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:src="@android:drawable/ic_dialog_info"
+                android:text="@string/current_drawing_tool"
+                android:gravity="center"
+                android:textSize="12sp" 
+                android:background="@android:color/darker_gray"
+                android:textColor="@android:color/black"
                 />
-
+            
             <Spinner
                 android:id="@+id/spinner_drawing_option_selector"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:longClickable="false"
                 android:background="@android:color/darker_gray"
+                android:paddingBottom="10dp"
                  />
-          
+          	
+            <ImageView 
+                android:id="@+id/imageView_pickedColor"
+                android:layout_width="fill_parent"
+                android:layout_height="40dp"
+                android:background="@android:color/darker_gray"
+                android:layout_margin="10dp"
+                android:contentDescription="@string/showing_currently_selected_color"
+                 />
+
+            <RelativeLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/darker_gray" >
+                
+                <TextView 
+                   	android:layout_width="wrap_content"
+                   	android:layout_height="40dp"
+                   	android:paddingLeft="2dp"
+                   	android:text="R"
+                   	android:textColor="@android:color/black"
+                   	android:gravity="center"
+                   	android:id="@+id/textView_R"/>
+                
+                <TextView 
+                   	android:layout_width="wrap_content"
+                   	android:layout_height="40dp"
+                   	android:layout_below="@id/textView_R"
+                   	android:paddingLeft="2dp"
+                   	android:gravity="center"
+                   	android:text="G"
+                   	android:textColor="@android:color/black"
+                   	android:id="@+id/textView_G"/>
+                
+                <TextView 
+                   	android:layout_width="wrap_content"
+                   	android:layout_height="40dp"
+                   	android:gravity="center"
+                   	android:text="B"
+                   	android:layout_below="@id/textView_G"
+                   	android:textColor="@android:color/black"
+                   	android:paddingLeft="2dp"
+                   	android:id="@+id/textView_B"/>
+                
+                <SeekBar 
+                    android:id="@+id/seekBar_R"
+                    android:layout_width="fill_parent"
+                    android:layout_height="40dp"
+                    android:max="255"
+                    android:progress="10"
+                    android:layout_toRightOf="@id/textView_R"
+                    android:paddingLeft="5dp"
+                    android:paddingRight="5dp"
+                    />
+                
+                <SeekBar 
+                    android:id="@+id/seekBar_G"
+                    android:layout_width="fill_parent"
+                    android:layout_height="40dp"
+                    android:max="255"
+                    android:progress="10"
+                    android:layout_toRightOf="@id/textView_G"
+                    android:layout_below="@id/seekBar_R"
+                    android:paddingLeft="5dp"
+                    android:paddingRight="5dp"
+                    />
+                
+                <SeekBar 
+                    android:id="@+id/seekBar_B"
+                    android:layout_width="fill_parent"
+                    android:layout_height="40dp"
+                    android:max="255"
+                    android:progress="10"
+                    android:layout_toRightOf="@id/textView_B"
+                    android:layout_below="@id/seekBar_G"
+                    android:paddingLeft="5dp"
+                    android:paddingRight="5dp"
+                    />
+                
+            </RelativeLayout>
+            
+            <ToggleButton 
+                android:id="@+id/toggleButton_filled"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:textOn="FILLED"
+                android:textOff="STROKE"
+                android:text="@string/shapes_paint_style"
+                android:layout_margin="5dp"
+                android:checked="true"
+                />
+            
+            <TextView 
+                android:id="@+id/textView_thickness"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/string_thickness"
+                android:background="@android:color/darker_gray"
+                android:textColor="@android:color/black"
+                android:gravity="center"
+                android:textSize="18sp"
+                android:paddingBottom="5dp"
+                android:paddingTop="10dp"/>
+            
+            <SeekBar 
+                android:id="@+id/seekbar_thickness"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:max="20"
+                android:progress="4"
+                android:padding="5dp"
+                />
+            
         </LinearLayout>
     </ScrollView>
 

@@ -1,6 +1,9 @@
 package com.coursera.finaltask.drawexpress;
 
 import android.graphics.Paint;
+import android.graphics.Paint.Style;
+import android.os.Parcel;
+import android.os.Parcelable;
 
 /**
  * Line shape is used to store informations about line that will be drawn.
@@ -8,7 +11,7 @@ import android.graphics.Paint;
  * @author Silvio
  * 
  */
-public class LineShape extends DrawingShape {
+public class LineShape extends DrawingShape implements Parcelable{
 
 	/**
 	 * Starting X-axis position.
@@ -124,5 +127,49 @@ public class LineShape extends DrawingShape {
 		}
 	}
 	
+	public LineShape(Parcel in)
+	{
+		super(new Paint(Paint.ANTI_ALIAS_FLAG));
+		
+		float[] values = new float[4];
+		in.readFloatArray(values);
+		setValues(values);
+		
+		int color = in.readInt();;
+		Style style = in.readInt() == 0? Style.FILL: Style.STROKE;
+		float stroke = in.readFloat();
+		
+		mPaint.setColor(color);
+		mPaint.setStyle(style);
+		mPaint.setStrokeWidth(stroke);
+	}
 	
+	@Override
+	public void writeToParcel(Parcel dest, int flags) {
+		dest.writeFloatArray(getValues());
+		dest.writeInt(mPaint.getColor());
+		dest.writeInt(mPaint.getStyle() == Style.FILL?0:1);
+		dest.writeFloat(mPaint.getStrokeWidth());
+		// paint doesn't implement parcelable...
+		// so added values manually
+	}
+
+	public static final Parcelable.Creator<LineShape> CREATOR = new Parcelable.Creator<LineShape>() {
+
+		@Override
+		public LineShape createFromParcel(Parcel source) {
+			return new LineShape(source);
+		}
+
+		@Override
+		public LineShape[] newArray(int size) {
+			return new LineShape[size];
+		}
+	};
+
+
+	@Override
+	public int describeContents() {
+		return 0;
+	}
 }

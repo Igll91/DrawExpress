@@ -1,7 +1,16 @@
 package com.coursera.finaltask.drawexpress;
 
 import android.graphics.Paint;
+import android.graphics.Paint.Style;
+import android.os.Parcel;
+import android.os.Parcelable;
 
+/**
+ * Circle shape is used to store informations about circle that will be drawn.
+ * 
+ * @author Silvio
+ * 
+ */
 public class CircleShape extends DrawingShape {
 
 	/**
@@ -104,4 +113,49 @@ public class CircleShape extends DrawingShape {
 		}
 	}
 
+	@Override
+	public int describeContents() {
+		return 0;
+	}
+
+	public CircleShape(Parcel in)
+	{
+		super(new Paint(Paint.ANTI_ALIAS_FLAG));
+		
+		float[] values = new float[3];
+		in.readFloatArray(values);
+		setValues(values);
+		
+		int color = in.readInt();;
+		Style style = in.readInt() == 0? Style.FILL: Style.STROKE;
+		float stroke = in.readFloat();
+		
+		mPaint.setColor(color);
+		mPaint.setStyle(style);
+		mPaint.setStrokeWidth(stroke);
+	}
+	
+	@Override
+	public void writeToParcel(Parcel dest, int flags) {
+		dest.writeFloatArray(getValues());
+		dest.writeInt(mPaint.getColor());
+		dest.writeInt(mPaint.getStyle() == Style.FILL?0:1);
+		dest.writeFloat(mPaint.getStrokeWidth());
+		// paint doesn't implement parcelable...
+		// so added values manually
+	}
+
+	public static final Parcelable.Creator<CircleShape> CREATOR = new Parcelable.Creator<CircleShape>() {
+
+		@Override
+		public CircleShape createFromParcel(Parcel source) {
+			return new CircleShape(source);
+		}
+
+		@Override
+		public CircleShape[] newArray(int size) {
+			return new CircleShape[size];
+		}
+	};
+	
 }

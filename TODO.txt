@@ -1,5 +1,27 @@
-Sredit crtanje rectanglea
+DONE: 
+----------------------------------------------------------------------------------------------
+
+Sredit crtanje rectanglea, SREÐENO ... glupi break u switch caseu -.- majko mila...
+novi drawing dialog question // DONE !
 Odabir boje uraditi...
 Odabir filled ili ne kod crtanja kruga i rectanglea... 
+dodati crtanje free style pixela 
+dodati moguænost mijenjanja debljine linija...
+kod pause i resume spremiti i loadati sliku na kojoj je raðeno, uz pomoæ save i load instance, spremanje liste objekata za crtanje
 spremanje slike
-shareanje slike 
+Sve ove tekste prebaciti u resurse ! 
+Javadoc nadopisati na nove metode
+
+
+TO DO
+----------------------------------------------------------------------------------------------
+
+stavit slike (circle freestyle, rec..) za sve dimenzije 
+Kasnije shareati src code na courseri da mogu ostali vidjeti
+shareanje slike --- forget... ne treba 
+
+
+mmm... drawing cache koristiti umjesto polja :/ ? ali onda opet... ne vrijedi onPause/onResume... trebalo bi na bitmap prebacit onda ...
+mkii... ovo je zeznuto... nisam siguran dal sam napravil na najbolji naèin :/ ...  
+
+memorija, provjera, poboljšanje ? 

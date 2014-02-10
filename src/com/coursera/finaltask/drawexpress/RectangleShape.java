@@ -1,6 +1,9 @@
 package com.coursera.finaltask.drawexpress;
 
 import android.graphics.Paint;
+import android.graphics.Paint.Style;
+import android.os.Parcel;
+import android.os.Parcelable;
 
 /**
  * Rectangle shape is used to store informations about rectangle that will be drawn.
@@ -8,7 +11,7 @@ import android.graphics.Paint;
  * @author Silvio
  *
  */
-public class RectangleShape extends DrawingShape {
+public class RectangleShape extends DrawingShape implements Parcelable{
 
 	/**
 	 * Rectangle X-axis left position.
@@ -125,4 +128,50 @@ public class RectangleShape extends DrawingShape {
 		this.bottom = values[3];
 	}
 
+	public RectangleShape(Parcel in)
+	{
+		super(new Paint(Paint.ANTI_ALIAS_FLAG));
+		
+		float[] values = new float[4];
+		in.readFloatArray(values);
+		setValues(values);
+		
+		int color = in.readInt();;
+		Style style = in.readInt() == 0? Style.FILL: Style.STROKE;
+		float stroke = in.readFloat();
+		
+		mPaint.setColor(color);
+		mPaint.setStyle(style);
+		mPaint.setStrokeWidth(stroke);
+	}
+	
+	@Override
+	public void writeToParcel(Parcel dest, int flags) {
+		dest.writeFloatArray(getValues());
+		dest.writeInt(mPaint.getColor());
+		dest.writeInt(mPaint.getStyle() == Style.FILL?0:1);
+		dest.writeFloat(mPaint.getStrokeWidth());
+		// paint doesn't implement parcelable...
+		// so added values manually
+	}
+
+	public static final Parcelable.Creator<RectangleShape> CREATOR = new Parcelable.Creator<RectangleShape>() {
+
+		@Override
+		public RectangleShape createFromParcel(Parcel source) {
+			return new RectangleShape(source);
+		}
+
+		@Override
+		public RectangleShape[] newArray(int size) {
+			return new RectangleShape[size];
+		}
+	};
+
+
+	@Override
+	public int describeContents() {
+		return 0;
+	}
+	
 }
